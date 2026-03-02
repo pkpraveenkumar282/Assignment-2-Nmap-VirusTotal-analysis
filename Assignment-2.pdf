@@ -1,0 +1,145 @@
+Assignment 2
+Network Scanning & Threat Analysis
+
+Target: scanme.nmap.org
+Tools Used: Nmap and VirusTotal
+
+1️⃣ Nmap Commands Used
+1.1 Basic Scan
+nmap scanme.nmap.org
+Explanation:
+
+This command performs a basic TCP scan on the target.
+It checks whether the host is online and identifies open ports.
+
+Information Revealed:
+
+Host is up
+
+List of open ports
+
+Basic service names
+
+1.2 Service Version Detection Scan
+nmap -sV scanme.nmap.org
+Explanation:
+
+The -sV option enables service version detection.
+It identifies the exact software and version running on open ports.
+
+Information Revealed:
+
+Service names
+
+Software versions
+
+Product information
+
+1.3 Aggressive Scan
+nmap -A scanme.nmap.org
+Explanation:
+
+The -A option enables:
+
+OS detection
+
+Version detection
+
+Script scanning
+
+Traceroute
+
+This provides more detailed information about the system.
+
+2️⃣ Scan Results
+
+After performing the scans, the following open ports were identified:
+
+Port	State	Service
+22	Open	SSH
+80	Open	HTTP
+9929	Open	nping-echo
+Observations:
+
+Port 22 indicates SSH remote login service.
+
+Port 80 indicates a web server running.
+
+Port 9929 is a testing service used by Nmap.
+
+The host responded successfully to scanning, which confirms it is active and reachable.
+
+3️⃣ VirusTotal Findings
+
+The domain scanme.nmap.org was searched on VirusTotal.
+
+What VirusTotal Is Used For:
+
+VirusTotal is an online threat intelligence platform that:
+
+Scans domains, IPs, and files
+
+Checks reputation using multiple antivirus engines
+
+Provides passive security intelligence
+
+Findings:
+
+The domain resolves to a public IP address.
+
+No malicious detections were found.
+
+SSL certificate information is available.
+
+No suspicious activity was reported.
+
+This confirms that scanme.nmap.org is a legitimate test server.
+
+4️⃣ Port & Service Analysis
+Port 22 – SSH
+
+Used for secure remote login.
+
+Possible Risk: Brute force attacks or weak passwords.
+
+Port 80 – HTTP
+
+Used for web server communication.
+
+Possible Risk: Web vulnerabilities if misconfigured.
+
+Port 9929 – Nmap Test Service
+
+Used for Nmap testing.
+
+Minimal risk in this controlled environment.
+
+Open ports increase the attack surface of a system. Proper security controls and updates are necessary.
+
+5️⃣ Vulnerability Reasoning
+
+Based on the services discovered:
+
+If SSH service is outdated, it may contain known vulnerabilities.
+
+If the web server software is outdated, it may be vulnerable to web-based attacks.
+
+Exposed services should always be updated and secured.
+
+No exploitation was performed as per assignment instructions.
+
+6️⃣ Conclusion
+
+From this assignment, I learned:
+
+How to perform basic network scanning using Nmap.
+
+How to identify open ports and running services.
+
+How service versions help in vulnerability analysis.
+
+The difference between active scanning (Nmap) and passive intelligence (VirusTotal).
+
+How exposed ports can create potential security risks.
+
+This exercise improved my understanding of reconnaissance and vulnerability assessment fundamentals.
